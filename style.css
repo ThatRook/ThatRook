@@ -1,0 +1,220 @@
+body::before {
+  content: "";
+  position: fixed;      
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* semi-transparent overlay */
+  z-index: 0;           
+}
+
+/* --- Main container --- */
+.container {
+  max-width: 95%;        
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;  
+  position: relative;
+  z-index: 1;  
+  box-sizing: border-box;
+}
+/* --- Profile image --- */
+.avatar {
+  width: min(25vw, 200px); /* scales with screen but caps at 200px */
+  aspect-ratio: 1 / 1;     /* keeps it perfectly square */
+  border-radius: 50%;      /* makes it circular */
+  object-fit: cover;       /* crops if image isn’t square */
+  margin-bottom: 10px;     /* spacing below */
+  flex-shrink: 0;          /* prevents it from squishing */
+}
+
+/* --- Name --- */
+h1 {
+  font-family: 'Poppins', sans-serif; 
+  font-size: 2.2rem;                  
+  color: #000000;                     
+  margin: 10px 0 5px 0;               
+  text-align: center;
+}
+
+/* --- Bio --- */
+p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;                     
+  color: #000000;                        
+  margin: 0 0 20px 0;                  
+  text-align: center;
+}
+
+/* --- Links container --- */
+.links-and-instagram {
+  display: flex;
+  flex-wrap: wrap;        
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* --- Buttons --- */
+.links {
+  width: 100%;            
+  max-width: 300px;       
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-btn {
+  width: 100%;           
+  max-width: 300px;
+  height: auto;          
+  margin: 10px 0;        
+  border-radius: 25px;
+  cursor: pointer;       
+  transition: transform 0.2s;
+}
+
+.custom-btn:hover {
+  transform: scale(1.05);
+}
+
+/* --- Social icons --- */
+.social-icons {
+  display: flex;
+  gap: 15px;         
+  justify-content: center; 
+  margin-bottom: 20px; 
+}
+
+.icon {
+  width: 35px;        
+  height: 35px;
+  transition: transform 0.2s;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+/* --- Instagram post --- */
+.instagram-post img {
+  width: 100%;       
+  max-width: 400px;  
+  height: auto;       
+  border-radius: 10px;    
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: block;         
+  margin: 0 auto;         
+}
+
+/* --- Countdown --- */
+.countdown {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 10px; 
+}
+
+.time-box {
+  background-color: #f5deb3;       
+  color: #111;
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  min-width: 60px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif; 
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2), 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+/* --- Body & background --- */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  text-align: center;
+  background-image: url('background.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #f5deb3;
+}
+.footer {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: #000000;
+  opacity: 0.8;
+  margin-top: 40px;
+  padding: 15px 0;
+  z-index: 2;
+  position: relative; /* ensures it stays in normal flow */
+}
+.spotify-preview {
+  margin-top: 20px;        /* space above the player */
+  display: flex;
+  justify-content: center;  /* centers the player */
+  width: 100%;
+  max-width: 350px;         /* caps width for large screens */
+}
+
+.spotify-preview iframe {
+  width: 100%;              /* scales to container */
+  height: 80px;             /* match the compact player height */
+  border-radius: 12px;
+}
+/* --- Mobile responsiveness --- */
+@media (max-width: 1080px) {
+  .container {
+    max-width: 95%;
+    padding: 20px;
+  }
+
+  .avatar {
+    width: 220px; 
+    height: 220px;
+  }
+
+  h1 {
+    font-size: 3.5rem; /* slightly larger name */
+  }
+
+  .social-icons img.icon {
+    width: 60px;   /* smaller than before (was 80px) */
+    height: 60px;
+    margin: 0 6px;
+  }
+
+  .links-and-instagram {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .links {
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .custom-btn {
+    max-width: 350px;
+    width: 100%;
+  }
+
+  .instagram-post img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+  }
+}
+

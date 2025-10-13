@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Link Page</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <meta property="og:title" content="ROOK - My Links">
+  <meta property="og:description" content="Check out my Spotify, YouTube, merch, and updates!">
+  <meta property="og:image" content="profile.jpg">
+  <meta property="og:url" content="https://yourpage.github.io">
+</head>
+<script>
+  const countDownDate = new Date("2025-10-14T12:00:00").getTime();
+
+  const timer = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerHTML = days.toString().padStart(2, "0");
+    document.getElementById("hours").innerHTML = hours.toString().padStart(2, "0");
+    document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, "0");
+    document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, "0");
+
+    if (distance < 0) {
+      clearInterval(timer);
+      document.querySelector(".countdown").innerHTML = "EXPIRED";
+    }
+  }, 1000);
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'YOUR_TRACKING_ID');
+</script>
+
+<body>
+ <div class="container">
+    <img src="profile.jpg" alt="Profile Picture" class="avatar">
+    <h1>ROOK</h1>
+  <div class="social-icons">
+    <a href="https://instagram.com/yourusername" target="_blank">
+      <img src="instagram.png" alt="Instagram" class="icon">
+    </a>
+    <a href="https://twitter.com/yourusername" target="_blank">
+      <img src="tiktok.png" alt="Tiktok" class="icon">
+    </a>
+</div>
+<div class="links-and-instagram">
+  <div class="links">
+    <a href="https://spotify.com" target="_blank">
+      <img src="spotify-btn.png" alt="Spotify" class="custom-btn">
+    </a>
+    <a href="https://youtube.com" target="_blank">
+      <img src="youtube-btn.png" alt="YouTube" class="custom-btn">
+    </a>
+    <a href="https://yourmerch.com" target="_blank">
+      <img src="merch-btn.png" alt="Merch" class="custom-btn">
+    </a>
+  </div>
+
+  <div class="instagram-post">
+    <a href="https://www.instagram.com/p/POST_ID/" target="_blank">
+      <img src="instagrampost.png" alt="Instagram post" class="instagram-screenshot">
+    </a>
+  </div>
+</div> <!-- closes links-and-instagram -->
+
+<div class="countdown">
+  <span class="time-box" id="days">00</span>
+  <span class="time-box" id="hours">00</span>
+  <span class="time-box" id="minutes">00</span>
+  <span class="time-box" id="seconds">00</span>
+</div>
+<div class="spotify-preview">
+  <iframe 
+    src="https://open.spotify.com/embed/track/24LS4lQShWyixJ0ZrJXfJ5" 
+    style="border-radius:12px;" 
+    width="100%" 
+    height="80" 
+    frameborder="0" 
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+    loading="lazy">
+  </iframe>
+</div>
+  <footer class="footer">
+    © 2025 ROOK
+  </footer>
+</div>
+</body>
+</html>
