@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'SummerLoving';
-  src: url('fonts/SummerLoving_Solid.otf') format('opentype');
+  src: url('fonts/SummerLoving.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -42,11 +42,12 @@ body::before {
 /* --- Name --- */
 h1 {
   font-family: 'SummerLoving', sans-serif;
-  font-size: 3rem;        /* makes it larger — you can tweak to 3.5rem or 4rem */
-  color: #ffffff;         /* pure white text */
-  margin: 20px 0 10px 0;  /* adds a little more space above and below */
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* subtle glow so it's readable on bright backgrounds */
-  letter-spacing: 2px;    /* optional: adds spacing between letters for a bold look */
+  font-size: 6rem;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  font-weight: normal;
+  margin: 10px 0 5px 0; /* top 10px, bottom 5px */
 }
 
 /* --- Bio --- */
