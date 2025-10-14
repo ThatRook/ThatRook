@@ -42,8 +42,8 @@ body::before {
 /* --- Name --- */
 h1 {
   font-family: 'SummerLoving', sans-serif;
-  font-size: 1.8rem;
-  color: #000;
+  font-size: 3rem;
+  color: #fff;
   margin: 10px 0 5px 0;
 }
 
@@ -223,6 +223,7 @@ body {
     height: auto;
   }
 }
+
 
 
 
