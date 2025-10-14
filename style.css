@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'SummerLoving';
+  src: url('fonts/SummerLoving_Solid.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body::before {
   content: "";
   position: fixed;      
@@ -217,4 +224,5 @@ body {
     height: auto;
   }
 }
+
 
