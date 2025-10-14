@@ -199,16 +199,32 @@ body {
   background-color: #f5deb3;
 }
 .bouncing-wrapper {
-  position: fixed;   /* allows it to move anywhere on screen */
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 0;        /* behind content if needed */
+  z-index: 1;
 }
 
 .bouncing-icon {
-  width: 80px;       /* size of your icon */
+  width: 80px;           /* visible size stays the same */
+  height: 80px;
+  pointer-events: auto;  /* ensures it can be clicked */
+  cursor: pointer;
   transform-origin: center;
   display: block;
+}
+
+/* invisible padding area to make it easier to tap */
+.bouncing-icon::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 250px;    /* icon size + padding area */
+  height: 250px;
+  background: transparent;
+}
+
 }
 .footer {
   text-align: center;
