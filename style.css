@@ -4,6 +4,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'AkiraExpanded';
+  src: url('AkiraExpanded.ttf') format('truetype'); /* make sure the file is in your folder */
+  font-weight: normal;
+  font-style: normal;
+}
 
 body::before {
   content: "";
@@ -26,7 +32,7 @@ body::before {
   margin-top: 50px;
   margin-bottom: 50px;  
   position: relative;
-  z-index: 1;  
+  z-index: 2;  
   box-sizing: border-box;
 }
 /* --- Profile image --- */
@@ -192,6 +198,18 @@ body {
   background-attachment: fixed;
   background-color: #f5deb3;
 }
+.bouncing-wrapper {
+  position: fixed;   /* allows it to move anywhere on screen */
+  top: 0;
+  left: 0;
+  z-index: 0;        /* behind content if needed */
+}
+
+.bouncing-icon {
+  width: 80px;       /* size of your icon */
+  transform-origin: center;
+  display: block;
+}
 .footer {
   text-align: center;
   font-family: 'Poppins', sans-serif;
@@ -215,6 +233,45 @@ body {
   width: 100%;              /* scales to container */
   height: 80px;             /* match the compact player height */
   border-radius: 12px;
+}
+/* Popup container */
+.discount-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #c4b28f;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  text-align: center;
+  z-index: 5;
+
+  /* 🟢 Start hidden */
+  display: none;
+
+  /* layout once visible */
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.discount-popup .discount-image {
+  max-width: 90%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.close-img {
+  width: 100px;          /* a good medium size */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.close-img:hover {
+  transform: scale(1.05);
 }
 /* --- Mobile responsiveness --- */
 @media (max-width: 1080px) {

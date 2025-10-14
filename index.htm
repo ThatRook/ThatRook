@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Rook Links</title>
+  <title>My Link Page</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.png" type="image/png">
   <meta property="og:title" content="ROOK - My Links">
@@ -50,7 +50,58 @@
   gtag('config', 'YOUR_TRACKING_ID');
 </script>
 
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const wrapper = document.querySelector('.bouncing-wrapper'); // handles position
+  const icon = document.querySelector('.bouncing-icon');       // handles rotation
+
+  // Random starting position
+  let x = Math.random() * (window.innerWidth - icon.offsetWidth);
+  let y = Math.random() * (window.innerHeight - icon.offsetHeight);
+  
+  // Movement speed
+  let dx = 1.5, dy = 1.5;
+
+  // Rotation
+  let angle = 0;
+  let rotationSpeed = 0.3; // slower rotation for smoothness
+
+  function moveIcon() {
+    const iconWidth = icon.offsetWidth;
+    const iconHeight = icon.offsetHeight;
+
+    // Bounce off edges
+    if (x + iconWidth >= window.innerWidth || x <= 0) dx = -dx;
+    if (y + iconHeight >= window.innerHeight || y <= 0) dy = -dy;
+
+    // Update position
+    x += dx;
+    y += dy;
+
+    // Update rotation
+    angle = (angle + rotationSpeed) % 360;
+
+    // Apply position to wrapper
+    wrapper.style.left = x + 'px';
+    wrapper.style.top = y + 'px';
+
+    // Apply rotation to image
+    icon.style.transform = `rotate(${angle}deg)`;
+  }
+
+  // Smooth animation loop
+  setInterval(moveIcon, 10);
+});
+</script>
+
 <body>
+<div class="bouncing-wrapper">
+  <img src="bouncing_icon.png" alt="Bouncing Icon" class="bouncing-icon">
+</div>
+<div id="discount-popup" class="discount-popup">
+  <img src="Discountcode.png" alt="Discount Code" class="discount-image">
+  <img src="Coolbutton.png" alt="Close" id="close-popup" class="close-img">
+</div>
  <div class="container">
     <img src="profile.jpg" alt="Profile Picture" class="avatar">
     <h1>Rook</h1>
@@ -104,8 +155,8 @@
     © 2025 ROOK
   </footer>
 </div>
+<script src="script.js"></script>
 </body>
 
 </html>
-
 
