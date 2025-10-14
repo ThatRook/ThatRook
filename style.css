@@ -5,6 +5,12 @@
   font-style: normal;
 }
 @font-face {
+  font-family: 'SummerLoving_Solid';
+  src: url('fonts/SummerLoving_Solid.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: 'AkiraExpanded';
   src: url('AkiraExpanded.ttf') format('truetype'); /* make sure the file is in your folder */
   font-weight: normal;
@@ -37,23 +43,28 @@ body::before {
 }
 /* --- Profile image --- */
 .avatar {
-  width: min(25vw, 200px); /* scales with screen but caps at 200px */
-  aspect-ratio: 1 / 1;     /* keeps it perfectly square */
-  border-radius: 50%;      /* makes it circular */
-  object-fit: cover;       /* crops if image isn’t square */
-  margin-bottom: 10px;     /* spacing below */
-  flex-shrink: 0;          /* prevents it from squishing */
+    width: min(25vw, 200px);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: -80px; /* moves image up over the name */
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2; /* keeps it above background if needed */
 }
 
 /* --- Name --- */
 h1 {
-  font-family: 'SummerLoving', sans-serif;
-  font-size: 6rem;
-  color: #ffffff;
-  letter-spacing: 2px;
-  text-shadow: 0 4px 10px rgba(0,0,0,0.4);
-  font-weight: normal;
-  margin: 10px 0 5px 0; /* top 10px, bottom 5px */
+    font-family: 'SummerLoving', sans-serif;
+    font-size: 8rem;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 3;
 }
 
 /* --- Bio --- */
@@ -159,7 +170,14 @@ p {
 }
 
 .click-me-img {
-  animation: wiggle 2s infinite alternate;
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    width: 150px; /* increase size — try 150–220px */
+    height: auto;
+    transform: rotate(15deg);
+    animation: wiggle 2s infinite alternate;
+    pointer-events: none; /* makes sure it doesn't block clicks */
 }
 
 /* --- Countdown --- */
@@ -224,30 +242,17 @@ body {
   height: 250px;
   background: transparent;
 }
-
-}
-.footer {
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.9rem;
-  color: #000000;
-  opacity: 0.8;
-  margin-top: 40px;
-  padding: 15px 0;
-  z-index: 2;
-  position: relative; /* ensures it stays in normal flow */
-}
 .spotify-preview {
   margin-top: 20px;        /* space above the player */
   display: flex;
   justify-content: center;  /* centers the player */
   width: 100%;
-  max-width: 350px;         /* caps width for large screens */
+  max-width: 430px;         /* caps width for large screens */
 }
 
 .spotify-preview iframe {
   width: 100%;              /* scales to container */
-  height: 80px;             /* match the compact player height */
+  height: 200px;             /* match the compact player height */
   border-radius: 12px;
 }
 /* Popup container */
@@ -289,51 +294,99 @@ body {
 .close-img:hover {
   transform: scale(1.05);
 }
+
+.letteform-container {
+  background-color: #f5deb3;  /* solid background behind your doodle form */
+  display: flex;
+  justify-content: center;
+  padding: 10px;             /* optional spacing around the image */
+  border-radius: 12px;       /* optional rounding to match style */
+  max-width: 700px;          /* same as image max-width for alignment */
+  margin: 20px auto;         /* center on the page */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* optional subtle shadow */
+}
 /* --- Mobile responsiveness --- */
 @media (max-width: 1080px) {
-  .container {
-    max-width: 95%;
-    padding: 20px;
-  }
+    .container {
+        transform: scale(1.1);
+        transform-origin: top center;
+    }
 
-  .avatar {
-    width: 220px; 
-    height: 220px;
-  }
+    .avatar {
+        margin-bottom: -110px; /* moves the image up over the name */
+    }
 
-  h1 {
-    font-size: 3.5rem; /* slightly larger name */
-  }
+    h1 {
+        font-size: 12rem;
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
 
-  .social-icons img.icon {
-    width: 60px;   /* smaller than before (was 80px) */
-    height: 60px;
-    margin: 0 6px;
-  }
+    .social-icons img.icon {
+        width: 100px;
+        height: 100px;
+        margin: 0 6px;
+    }
 
-  .links-and-instagram {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
+    .links-and-instagram {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
 
-  .links {
-    max-width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    .links {
+        max-width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .custom-btn {
-    max-width: 350px;
-    width: 100%;
-  }
+    .custom-btn {
+        max-width: 350px;
+        width: 100%;
+    }
 
-  .instagram-post img {
-    max-width: 500px;
-    width: 100%;
-    height: auto;
-  }
+    .instagram-post,
+    .instagram-post-wrapper {
+        width: 75%;
+        max-width: 75%;
+        display: flex;
+        justify-content: center;
+    }
+
+        .instagram-post img,
+        .instagram-post-wrapper .instagram-screenshot {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+        }
+
+    .click-me-img {
+        width: 200px;
+        top: 5px;
+        right: 5px;
+        transform: rotate(15deg);
+    }
+
+    .time-box {
+        font-size: 2rem;
+        padding: 20px 25px;
+        min-width: 80px;
+    }
+
+    .countdown {
+        gap: 15px;
+    }
+
+    .spotify-preview {
+        max-width: 660px;
+        margin-top: 30px;
+    }
+
+        .spotify-preview iframe {
+            height: 400px;
+            border-radius: 16px;
+        }
 }
 
 
