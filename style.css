@@ -119,6 +119,42 @@ p {
   display: block;         
   margin: 0 auto;         
 }
+.instagram-post-wrapper {
+  position: relative;   /* allows overlay positioning */
+  display: inline-block;
+}
+
+.instagram-post-wrapper .instagram-screenshot {
+  width: 100%;       
+  max-width: 400px;  
+  height: auto;       
+  border-radius: 10px;    
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: block;         
+  margin: 0 auto;         
+}
+
+.click-me-img {
+  position: absolute;      /* position relative to wrapper */
+  top: 10px;               /* distance from top of post */
+  right: 10px;             /* distance from right of post */
+  width: 80px;             /* adjust size as needed */
+  height: auto;            /* maintain proportions */
+  pointer-events: none;    /* allow click to pass through */
+  transform: rotate(15deg);  /* rotate clockwise */
+}
+
+@keyframes wiggle {
+  0%   { transform: rotate(15deg) translate(0, 0); }
+  25%  { transform: rotate(18deg) translate(2px, 2px); }
+  50%  { transform: rotate(12deg) translate(-2px, -2px); }
+  75%  { transform: rotate(15deg) translate(1px, -1px); }
+  100% { transform: rotate(15deg) translate(0, 0); }
+}
+
+.click-me-img {
+  animation: wiggle 2s infinite alternate;
+}
 
 /* --- Countdown --- */
 .countdown {
