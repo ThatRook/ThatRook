@@ -41,11 +41,10 @@ body::before {
 
 /* --- Name --- */
 h1 {
-  font-family: 'Poppins', sans-serif; 
-  font-size: 2.2rem;                  
-  color: #000000;                     
-  margin: 10px 0 5px 0;               
-  text-align: center;
+  font-family: 'SummerLoving', sans-serif;
+  font-size: 1.8rem;
+  color: #000;
+  margin: 10px 0 5px 0;
 }
 
 /* --- Bio --- */
@@ -224,5 +223,6 @@ body {
     height: auto;
   }
 }
+
 
 
