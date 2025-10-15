@@ -313,7 +313,7 @@ body {
     }
 
     .avatar {
-        margin-bottom: -110px; /* moves the image up over the name */
+        margin-bottom: -80px; /* moves the image up over the name */
     }
 
     h1 {
@@ -326,6 +326,7 @@ body {
         width: 100px;
         height: 100px;
         margin: 0 6px;
+        margin-top: 20px;
     }
 
     .links-and-instagram {
