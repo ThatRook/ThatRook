@@ -151,6 +151,20 @@ window.addEventListener('DOMContentLoaded', () => {
     loading="lazy">
   </iframe>
 </div>
+<div class="newsletter">
+  <h2>Join my Newsletter</h2>
+  <form id="newsletter-form">
+    <input type="email" id="email" placeholder="Enter your email" required>
+    <select id="category" required>
+      <option value="">Select your interest</option>
+      <option value="Music">Music</option>
+      <option value="Free Plugins">Free Plugins</option>
+      <option value="Plugin Discounts">Plugin Discounts</option>
+    </select>
+    <button type="submit">Subscribe</button>
+  </form>
+  <p id="response-message"></p>
+</div>
 <script src="script.js"></script>
 </body>
 
