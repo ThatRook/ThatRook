@@ -16,7 +16,7 @@ const form = document.getElementById("newsletter-form");
 const responseMessage = document.getElementById("response-message");
 
 // Replace with your deployed Apps Script URL
-const scriptURL = "https://script.google.com/macros/s/AKfycbxKS1hpmTzsTbGLkvTUD5Y66XI1ErdAWBcBU1ztw_iAefmDja2hTzSVXsqbgo0jLJp8Jg/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbx6IUWvR8yyYc7PIV9906D84rOFZX9YBl-i7tetjalv6nTGZeJEUChmx4ev3Cyfj34YxQ/exec";
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -42,3 +42,4 @@ form.addEventListener("submit", async (e) => {
         console.error(err);
     }
 });
+
