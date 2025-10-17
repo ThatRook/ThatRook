@@ -4,19 +4,20 @@ const closeBtn = document.getElementById('close-popup');
 
 // Show popup on click
 icon.addEventListener('click', () => {
-  popup.style.display = 'block';
+    popup.style.display = 'block';
 });
 
 // Close popup
 closeBtn.addEventListener('click', () => {
-  popup.style.display = 'none';
-})
+    popup.style.display = 'none';
+});
+
 // Newsletter form logic
 const form = document.getElementById("newsletter-form");
 const responseMessage = document.getElementById("response-message");
 
-// Replace with your deployed Apps Script URL
-const scriptURL = "https://script.google.com/macros/s/AKfycbx6IUWvR8yyYc7PIV9906D84rOFZX9YBl-i7tetjalv6nTGZeJEUChmx4ev3Cyfj34YxQ/exec";
+// Use your Render backend URL
+const scriptURL = "https://thatrook-backend.onrender.com/newsletter";
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -27,8 +28,8 @@ form.addEventListener("submit", async (e) => {
     try {
         const res = await fetch(scriptURL, {
             method: "POST",
-            body: JSON.stringify({ email, category }),
-            headers: { "Content-Type": "application/json" }
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, category })
         });
 
         const data = await res.json();
@@ -42,5 +43,3 @@ form.addEventListener("submit", async (e) => {
         console.error(err);
     }
 });
-
-
