@@ -28,8 +28,8 @@ form.addEventListener("submit", async (e) => {
     try {
         const res = await fetch(scriptURL, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email, category })
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams({ email, category })
         });
 
         const data = await res.json();
